@@ -1,0 +1,17 @@
+{
+  "name": "baby-slack-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@slack/client": "^4.4.0",
+    "js-yaml": "^3.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node ./src/bot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
