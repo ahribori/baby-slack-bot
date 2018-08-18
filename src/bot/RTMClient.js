@@ -1,12 +1,12 @@
 const { RTMClient } = require('@slack/client');
-const { config } = require('./config');
+const { config } = require('../config');
 
 const token = config.access_token || '';
 
-const rtm = new RTMClient(token);
-rtm.start();
+const bot = new RTMClient(token);
+bot.start();
 
-rtm.on('message', (event) => {
+bot.on('message', (event) => {
     const { type } = event;
     if (type === 'message') {
         messageReceiver(event);
@@ -28,7 +28,7 @@ const messageReceiver = event => {
 };
 
 const sendMessage = (message, conversationId) => {
-    rtm.sendMessage(message, conversationId)
+    bot.sendMessage(message, conversationId)
         .then(console.log)
         .catch(console.error);
 };
